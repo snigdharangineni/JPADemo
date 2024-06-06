@@ -34,6 +34,14 @@ public class App
     	EntityManager em = emf.createEntityManager();
     	
     	Alien alien = em.find(Alien.class, 101);
+    	Alien a = new Alien();
+    	a.setAid(9);
+    	a.setAname("Maria");
+    	a.setTech(".Net");
+    	
+    	em.getTransaction().begin();
+    	em.persist(a);
+    	em.getTransaction().commit();
     	System.out.println(alien);
     }
 }
